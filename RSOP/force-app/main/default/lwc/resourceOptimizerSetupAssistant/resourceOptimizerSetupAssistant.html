@@ -1,0 +1,65 @@
+<template>
+    record {metadatarecord}
+    field {metadatarecord.error}
+    <lightning-layout class="slds-p-around--large slds-wrap">
+        <section class="slds-card slds-size_1-of-1">
+            <ol class="slds-setup-assistant">
+                <li class="slds-setup-assistant__item">
+                    <article class="slds-setup-assistant__step">
+                        <div class="slds-summary-detail slds-is-open" id="Step1">
+                            <div class="slds-container_fluid">
+                                <div class="slds-summary-detail__title">
+                                    <div class="slds-setup-assistant__step-summary">
+                                        <div class="slds-media">
+                                            <div class="slds-media__figure">
+                                                <h3 class="slds-setup-assistant__step-summary-title slds-text-heading_small">
+                                                    <button class="slds-button slds-button_reset" aria-controls="step-1-summary-action" aria-expanded="true">Resource Configuration</button>
+                                                </h3>
+                                                <lightning-input type="toggle" label="Are your Users are Resources?" name="userResources" value="metadatarecord.data.fields.Are_your_Users_are_Resources__c.value"></lightning-input>
+                                                <lightning-dual-listbox name="languages"
+                                                    label="Select Profiles to create Resources"
+                                                    source-label="Available"
+                                                    selected-label="Selected"
+                                                    field-level-help="Select your preferred languages"
+                                                    options={options}
+                                                    onchange={handleChange}>
+                                                </lightning-dual-listbox>
+                                                <lightning-input type="toggle" label="Do you need Resource Grouping?" name="input1"></lightning-input>
+                                                <lightning-input type="toggle" label="Do you allow Overlay?" name="input1"></lightning-input>
+                                                <lightning-input type="toggle" label="Do you allow skill based assignment?" name="input1"></lightning-input>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </article>
+                </li>
+
+                <li class="slds-setup-assistant__item">
+                    <article class="slds-setup-assistant__step">
+                        <div class="slds-summary-detail slds-is-open" id="organisationDetails">
+                            <div class="slds-container_fluid">
+                                <div class="slds-summary-detail__title">
+                                    <div class="slds-setup-assistant__step-summary">
+                                        <div class="slds-media">
+                                            <div class="slds-media__figure">
+                                                <h3 class="slds-setup-assistant__step-summary-title slds-text-heading_small">
+                                                    <button class="slds-button slds-button_reset" aria-controls="step-1-summary-action" aria-expanded="true">Organisation Configuration</button>
+                                                </h3>
+                                                <lightning-input type="time" name="starTime" label="Enter Organisation Business hours Start Time"></lightning-input>
+                                                <lightning-input type="time" name="endTime" label="Enter Organisation Business hours End Time"></lightning-input>
+                                                <lightning-input type="number" name="organisationWOrkHours" required label="Enter number of work hours for each Resource per day" max="24" min="0"></lightning-input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </article>
+                </li>
+            </ol>
+        </section>
+    </lightning-layout>
+</template>
